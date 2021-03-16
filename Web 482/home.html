@@ -1,319 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Samira Saif Joarder</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
-<style>
-* {
-  box-sizing: border-box;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Rinder</title>
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  <style> 
+.site-btn{
+	padding:12px 25px 12px 25px;
+	border-radius:2px;
+	background:#fcbe16;
+	border-color:transparent;
+	font-size:14px;}
+.site-btn:hover{background:#82b62d;border:transparent;}
+.home-banner{padding-top:70px;}
+.carousel-inner img {width: 100%; max-height: 500px;}
+
+.img-overlay::after {
+	
+    background: rgba(0, 0, 0, 0.40) none repeat scroll 0 0;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
 }
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
+/* Carousel Header Styles */
+.header-text {
+    position: absolute;
+    top: 35%;
+    left: 1.8%;
+    right: auto;
+    width: 96.66666666666666%;
+    color: #e2e2e2;
+    font-size:20px; letter-spacing:1px;
 }
+.header-text h2 {font-size: 60px; color:#fff; font-weight:600;}
+.header-text span {padding: 10px;color:#82b62d;}
+.header-text h3 span {padding: 15px;}
+.header-text p {font-size:17px; line-height:22px;}
+.gap-t-30{margin-top:30px;}
 
-[class*="col-"] {
-  float: left;
-  padding: 15px;
+ /* Navigation CSS */
+.dropdown-menu > li > a {
+color: #fff;
+text-decoration: none;
+background-color: #726f6f ;
 }
-
-html {
-  font-family: "Lucida Sans", sans-serif;
+.dropdown-menu > li > a:hover {
+color: #fff;
+text-decoration: none;
+background-color: #82b62d ;
 }
-
-}
-
-.menu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu li {
-  padding: 8px;
-  margin-bottom: 7px;
-  background-color: #fffff;
-  color: #000000;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.menu li:hover {
-  background-color: #0099cc;
-}
-
-.aside {
+.dropdown-menu > li > a {padding:10px; border-bottom:1px solid #e2e2e2;}
+.navbar-default {
   background-color: #ffffff;
-  padding: 15px;
-  color: #000000;
-  text-align: center;
-  font-size: 18px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.footer {
-  background-color: #0099cc;
-  color: #ffffff;
-  text-align: center;
-  font-size: 10px;
-  padding: 6px;
-}
-
-/* For mobile phones: */
-[class*="col-"] {
-  width: 100%;
-}
-
-
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-  .col-1 {width: 8.33%;}
-  .col-2 {width: 16.66%;}
-  .col-3 {width: 25%;}
-  .col-4 {width: 33.33%;}
-  .col-5 {width: 41.66%;}
-  .col-6 {width: 50%;}
+  border-color: #ffffff;
+  padding:25px 0px 10px 0px;
+  font-weight:600;
+  letter-spacing:1px;
+  font-size:16px;
   
-  
-
 }
-</style>
-</head>
+
+.navbar-default .navbar-brand {
+  color: #242424;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: #82b62d;
+}
+.navbar-default .navbar-text {
+  color: #242424;
+}
+.navbar-default .navbar-nav > li > a {
+  color: #242424;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #82b62d;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #82b62d;
+  background-color: #ffffff;
+}
+
+  </style>
+  </head>
 <body>
 
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">MY PROTFOLIO</a>
+
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">LOGO</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Places <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Barishal</a></li>
+            <li><a href="#">Cosx's Bazar</a></li>
+            <li><a href="#">Sajek</a></li>
+            <li><a href="#">Rangamati</a></li>
+            <li><a href="#">Rangpur</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Tips & Tricks <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Tour Tricks</a></li>
+            <li><a href="#">Tour Tips</a></li>
+            <li><a href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact Us</a></li>   
+        
+      </ul>
+    </div>
       </div>
-     
-      <form class="navbar-form navbar-left" action="/action_page.php">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-    </div>
   </nav>
-
-<div class="row">
-  <div class="col-3 col-s-3 menu">
-    
-     <li><b>ABOUT ME<b></li>
-      <li><b>CO-RELEVENT WORK<b></li>
-      <li><b>ACADEMICS<b></li>
-      <li><b>AWARDS & CERTIFICATES <b></li>
-  </div>
-
-  <div class="col-6 col-s-7 ">
-<body class="is-preload">
-
-		<!-- Page Wrapper -->
-			<div id="page-wrapper">
-
-				<!-- Header -->
-					<header id="header" class="alt">
-						<h1><a href="#" class="image"><img src="img/samira.jpg"height="200" class="d-inline-block align-top" alt="" /></a></h1>
-
-            	
-						
-					</header>
-
-				<!-- Menu 
-					<nav id="menu">
-						<div class="inner">
-							<h2>Menu</h2>
-							<ul class="links">
-								<li><a href="index.html">Home</a></li>
-								<li><a href="generic.html">Generic</a></li>
-								<li><a href="elements.html">Elements</a></li>
-								<li><a href="#">Log In</a></li>
-								<li><a href="#">Sign Up</a></li>
-							</ul>
-							<a href="#" class="close">Close</a>
-						</div>
-					</nav>
--->
-
-				<!-- Banner -->
-					<section id="banner">
-						<div class="inner">
-							<div class="logo"><span class="icon fa-gem"></span></div>
-							<h2>Samira Saif Joarder</h2>
-                            <p>Undergrad Student<br>North South University<br/></p>
-						</div>
-					</section>
-
-				<!-- Wrapper -->
-					<section id="wrapper">
-
-						<!-- One -->
-							<section id="one" class="wrapper spotlight style1">
-								<div class="inner">
-									<a href="#" class="image"><img src="images/avatar.jpg" alt="" /></a>
-									<div class="content">
-										<h2 class="major">About Me</h2>
-										<p>I’m an energetic, ambitious person who has developed a mature and responsible approach to any task that I undertake, or situation that I am presented with. I’m highly interested in leadership and management related tasks along with technical ones. I’m an excellent interpersonal as well as have good communication skills. I do enjoy high pressure team environment.</p>
-										
-									</div>
-								</div>
-							</section>
-
-						<!-- Two -->
-							<section id="two" class="wrapper spotlight style2">
-								<div class="inner">
-									
-									<div class="content">
-										<h2 class="major">Experience</h2>
-																				<p>
-<b>Robi BDApps</b><br><font size="2">Since 2019</font><br/><br> 
- 
-•	Content Writer<br/><br>
-•	Campus Leader<br/><br>
-•	Awarded as Best Campus Leader (Female) at BDApps Developer Conference 2019<br/>
-</p>
-									</div>
-								</div>
-							</section>
-                        
-                        
-
-                        
-                        
-                        
-						<!-- Three -->
-							<section id="three" class="wrapper spotlight style3">
-								<div class="inner">
-									
-									<div class="content">
-										<h2 class="major">Education</h2>
-										<p><b>Secondady School Certificate</b><br><font size="2">
-                                            Chuadanga Govt Girls High School(2015)</font><br/><br><b>Higher Secondary Certificate</b><br><font size="2">Chuadanga Govt College(2017)</font><br/><br><b>Bachelor in Computer Science and Engineering</b><br><font size="2">North South University</font><br/></p>
-										
-										
-									</div>
-								</div>
-							</section>
-                        <!-- four -->
-                        <section id="four" class="wrapper spotlight style2">
-								<div class="inner">
-									
-									<div class="content">
-										<h2 class="major">CO-CURRICULAR ACTIVITY </h2>
-																				<p>
-<b>IEEE</b><br><font size="2">Since 2018</font><br/><br> 
- 
-•	Member<br/><br>
-•	Brand Ambassador<br/><br><br/><b>IEEE NSU Student Branch</b><br><font size="2">Since 2018</font><br/><br> 
-•	Core Volunteer <br/><br>
-•	Volunteered at Student Professional Awareness Conference (SPAC) 2018 <br/><br>
-•	Volunteered at IEEE Day 2018 <br/><br>
-•	Volunteered at Electrathon 2018 <br/><br>
-•	Former Brand Ambassador at IEEE BDS SYWM Congress 2018 <br/><br>
-•	Awarded as “Star Volunteer” 2018 <br/><br>
-•	Sub Executive (Event Coordinator) (2019-2020) <br/><br>
-•	Organizer at Student Professional Awareness Conference (SPAC) 2019 <br/><br>
-•	Organizer at IEEE Student Transition and Elevation Partnership (STEP) 2019 <br/><br>
-•	Exemplary Student Member<br/><br> <b>Junior Chamber International (JCI)</b><br><font size="2">Since 2019</font><br/><br>
-•	Member
-
-</p>
-									</div>
-								</div>
-							</section>
-
-						<!-- Four -->
-							<section id="four" class="wrapper alt style1">
-								<div class="inner">
-									<h2 class="major">Gallery</h2>
-									<p>Here are some photographs of my award,achievement and activity.</p>
-									<section class="features">
-										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Best Campus Leader(Female)</h3>
-											<p>Recieving the award"Best Campus Leader(Female)" from Honourable ICT Minister </p>
-											
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Star Volunteer </h3>
-											<p>I was recognized as One of the Star volunteer of IEEE NSU SB</p>
-											
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3 class="major">BdApps</h3>
-											<p>Appointed as BDApps campus leader of NSU</p>
-											
-										</article>
-										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3 class="major">Workshop</h3>
-											<p>Japan Bangladesh Robotics and advanced technology Research Center Seminar & Workshop on Robotics and Advanced technology</p>
-											
-										</article>
-									</section>
-									
-								</div>
-							</section>
-
-					</section>
-
-				<!-- Footer -->
-					<section id="footer">
-						<div class="inner">
-							<h2 class="major">Get in touch</h2>
-							
-							<ul class="contact">
-								
-								
-								<li class="icon solid fa-envelope"><a href="#">samira.saif.joarder@gmail.com</a></li>
-								<li class="icon brands fa-linkedin"><a href="https://www.linkedin.com/in/samira-saif-joarder-949873179/">Linkedin</a></li>
-								<li class="icon brands fa-facebook-f"><a href="https://www.facebook.com/samira.mitu.121">Facebook</a></li>
-								<li class="icon brands fa-instagram"><a href="https://www.instagram.com/samira_joarder/">Instagram</a></li>
-							</ul>
-							<ul class="copyright">
-								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</section>
-
+  <div class="home-banner">
+    <div id="myCarousels" class="carousel slide" data-ride="carousel" data-interval="false">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+			  	<li data-target="#myCarousels" data-slide-to="0" class="active"></li>
+			    <li data-target="#myCarousels" data-slide-to="1"></li>
+			    <li data-target="#myCarousels" data-slide-to="2"></li>
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner">
+			    <div class="item active">
+			        <div class="img-overlay">
+			    	<img src="img/boat.jpg" alt="Second slide">
+			    	</div>
+			    	<!-- Static Header -->
+                    <div class="header-text text-center hidden-xs">
+                       <div class="main_title ">
+                           
+			                <h2>Promodini Boat Life</h2>
+			                <p>ASIF BHAI BEST<P>
+	                   </div>  
+	                        <div class="">
+	                            <div class="gap-t-30"></div>
+                                <a class="btn btn-lg btn-primary site-btn" href="#">Learn More</a>
+                            </div>
+                         
+                    </div><!-- /header-text -->
+			    </div>
+			    <div class="item">
+			        <div class="img-overlay">
+			    	<img src="img/cox.jpg" alt="Second slide">
+			    	</div>
+			    	<!-- Static Header -->
+                    <div class="header-text text-center hidden-xs">
+                       <div class="main_title ">
+			                <h2>COX's Bazar</h2>
+							<p>HEMI BEST<p>
+			                
+	                   </div>  
+	                        <div class="">
+                                <a class="btn btn-lg btn-primary site-btn" href="#">Learn More</a>
+                            </div>
+                    </div><!-- /header-text -->
+			    </div>
+			    <div class="item">
+			        <div class="img-overlay">
+			    	<img src="img/sajek.jpg" alt="Second slide">
+			    	</div>
+			    	<!-- Static Header -->
+                    <div class="header-text text-center hidden-xs">
+                       <div class="main_title ">
+			                <h2>Sajek Valley</h2>
+			                <p>Mitu BEST</p>
+	                   </div>  
+	                        <div class="">
+                                <a class="btn btn-lg btn-primary site-btn" href="#">Learn More</a>
+                                
+                            </div>
+                    </div><!-- /header-text -->
+			    </div>
 			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-
-
-
-  
-    </div>
-
-
-
-
-  <div class="col-3 col-s-12">
-    <div class="aside">
-    <img src="img/images.png">
-      <p><b>BUY with 1 month free subscription only on NETFLIX <b></p>
-    </div>
-  </div>
+			<!-- Controls -->
+			<a class="left carousel-control" href="#myCarousels" data-slide="prev">
+		    	<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a class="right carousel-control" href="#myCarousels" data-slide="next">
+		    	<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div><!-- /carousel -->
 </div>
 
-<div class="footer">
-  <p>@copywrite w3school.com    contact: w3school@gmail.com</p>
-</div>
+
+
+
+
 
 </body>
 </html>

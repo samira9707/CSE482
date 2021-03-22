@@ -5,13 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Tour GuideS</title>
-    <!-- MDB icon -->
-    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <title>Travel Guide</title>
+    <!-- MDB icon 
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />-->
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -20,24 +21,32 @@
     <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/extra.css">
+    <link rel="stylesheet" href="extra_added_file/style.css">
 
+
+
+
+    <style>
+        .btn:focus,
+        .btn:active,
+        button:focus,
+        button:active {
+            outline: none !important;
+            box-shadow: none !important;
+        }
+        
+        #image-gallery .modal-footer {
+            display: block;
+        }
+        
+        .thumb {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+    </style>
 
 
 </head>
-<style>
-    .map-container {
-        height: 200px;
-        position: relative;
-    }
-    
-    .map-container iframe {
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-    }
-</style>
 
 <body>
     <!-- Start your project here-->
@@ -53,8 +62,8 @@
     </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="index.html">HOME </a>
                     </li>
 
                     <li class="nav-item dropdown multi-level-dropdown">
@@ -249,8 +258,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="blog.html">BLOG</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="gallery.html">GALLERY</a>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">GALLERY</a>
                         </li>
                 </ul>
                 <ul class="navbar-nav nav-flex-icons">
@@ -275,197 +284,205 @@
 
 
     <!--------------------------------------------JAA KORAR EKHAN THEKE KORTE HOBEEEE-------------------------------------->
+    <h1 class="h1-responsive">h1. heading</h1>
 
-
-    <section>
-
-
-
-        <!--Carousel Wrapper-->
-        <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
-            <!--Indicators-->
-            <ol class="carousel-indicators">
-                <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
-                <li data-target="#carousel-example-2" data-slide-to="1"></li>
-                <li data-target="#carousel-example-2" data-slide-to="2"></li>
-            </ol>
-            <!--/.Indicators-->
-            <!--Slides-->
-            <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
-                    <div class="view">
-                        <img class="d-block w-100" src="img/5.jpg" alt="First slide">
-                        <div class="mask rgba-black-light"></div>
-                    </div>
-                    <div class="carousel-caption">
-                        <h3 class="h3-responsive">Light mask</h3>
-                        <p>First text</p>
-                    </div>
+    <div class="container mt-lg-5">
+        <h1 class="h1-responsive">Let's See Our Bangladesh</h1>
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Cox's Bazar" data-image="img/cox.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/cox.jpg" alt="Another alt text">
+                    </a>
                 </div>
-                <div class="carousel-item">
-                    <!--Mask color-->
-                    <div class="view">
-                        <img class="d-block w-100" src="img/A.jpg" alt="Second slide">
-                        <div class="mask rgba-black-strong"></div>
-                    </div>
-                    <div class="carousel-caption">
-                        <h3 class="h3-responsive">Strong mask</h3>
-                        <p>Secondary text</p>
-                    </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Bandarban" data-image="img/5.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/5.jpg" alt="Another alt text">
+                    </a>
                 </div>
-                <div class="carousel-item">
-                    <!--Mask color-->
-                    <div class="view">
-                        <img class="d-block w-100" src="img/ab.jpg" alt="Third slide">
-                        <div class="mask rgba-black-slight"></div>
-                    </div>
-                    <div class="carousel-caption">
-                        <h3 class="h3-responsive">Slight mask</h3>
-                        <p>Third text</p>
-                    </div>
+
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Sajek" data-image="img/6.png" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/6.png" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Bangldesh" data-image="img/A.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/A.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Bangladesh" data-image="img/ab.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/ab.jpg" alt="Another alt text">
+                    </a>
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Amiakhum falls" data-image="img/af.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/af.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Mosque" data-image="img/B.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/B.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Bangladesh" data-image="img/ba.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/ba.jpg" alt="Another alt text">
+                    </a>
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Promodini Boat, Rangamati" data-image="img/boat.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/boat.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="BD" data-image="img/c.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/c.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Sundarban" data-image="img/d.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/d.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Sylhet" data-image="img/f.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/f.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="BD" data-image="img/g.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/g.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Hanging Bridge, Rangamati" data-image="img/h.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/h.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="National Martyrs Memorial, Savar" data-image="img/i.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/i.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Sylhet" data-image="img/j.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/j.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Bhola" data-image="img/k.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/k.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Kuakata" data-image="img/ku.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/ku.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Sylhet" data-image="img/l.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/l.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Bogura" data-image="img/m.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/m.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Sylhet" data-image="img/n.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/n.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="BD" data-image="img/r.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/r.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Sajek" data-image="img/s2.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/s2.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Sajek" data-image="img/sajek.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/sajek.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Dhaka" data-image="img/ss.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/ss.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="BD" data-image="img/t.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/t.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="BD" data-image="img/v.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/v.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Saat Gombuj Mosque" data-image="img/w.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/w.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Sylhet" data-image="img/x.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/x.jpg" alt="Another alt text">
+                    </a>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6 thumb">
+                    <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Sundarban" data-image="img/z.jpg" data-target="#image-gallery">
+                        <img class="img-thumbnail" src="img/z.jpg" alt="Another alt text">
+                    </a>
                 </div>
             </div>
-            <!--/.Slides-->
-            <!--Controls-->
-            <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-            <!--/.Controls-->
         </div>
-        <!--/.Carousel Wrapper-->
 
-
-    </section>
-
-
-    <div class="container my-5 py-5">
-
-
-        <!--Section: Content-->
-        <section class="text-center">
-
-            <h3 class="text-center font-weight-bold mb-5">Tour Packages</h3>
-            <!--Grid row-->
-            <div class="row">
-
-                <!--Grid column-->
-                <div class="col-lg-4 col-md-12 mb-4">
-
-                    <!-- Card -->
-                    <div class="card">
-
-                        <!-- Card image -->
-                        <div class="view overlay">
-                            <img class="card-img-top" src="img/A.jpg" alt="Card image cap">
-                            <a href="#!">
-                                <div class="mask rgba-white-slight"></div>
-                            </a>
-                        </div>
-
-                        <!-- Card content -->
-                        <div class="card-body">
-
-                            <p class="mb-1"><a href="" class="font-weight-bold black-text">Guthia Mosque</a></p>
-
-
-
-                            <div class="amber-text fa-xs mb-1">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                            </div>
-
-                            <button type="button" class="btn btn-black btn-rounded btn-sm px-3">Quick View</button>
-                            <button type="button" class="btn btn-outline-black btn-rounded btn-sm px-3 waves-effect">Details</button>
-
-                        </div>
-
+        <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="image-gallery-title"></h4>
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span>
+                            </button>
                     </div>
-                    <!-- Card -->
+                    <div class="modal-body">
+                        <img id="image-gallery-image" class="img-responsive col-md-12" src="">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary float-left" id="show-previous-image"><i class="fa fa-arrow-left"></i>
+                            </button>
 
-
+                        <button type="button" id="show-next-image" class="btn btn-secondary float-right"><i class="fa fa-arrow-right"></i>
+                            </button>
+                    </div>
                 </div>
-
             </div>
-            <!--Grid row-->
-
-
-        </section>
-        <!--Section: Content-->
-
-
+        </div>
+    </div>
     </div>
 
 
 
 
-    <div class="container mt-5">
 
 
-        <!--Section: Content-->
-        <section class="">
-
-            <!-- Section heading -->
-            <h3 class="text-center font-weight-bold mb-5">Featured Blog</h3>
-
-            <!-- Grid row -->
-            <div class="row">
-
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
-
-                    <!-- Card -->
-                    <div class="card hoverable">
-
-                        <!-- Card image -->
-                        <img class="card-img-top" src="img/A.jpg" alt="Card image cap">
+    <!-------------------------------------------AR EKHANEE ESHEE SESH HOBEEEE------------------------------------------->
 
 
-                        <!-- Card content -->
-                        <div class="card-body">
-
-                            <!-- Title -->
-                            <a href="#!" class="black-text">Top 5 content marketing strategies</a>
-                            <!-- Text -->
-                            <p class="card-title text-muted font-small mt-3 mb-2">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title.</p>
-
-                            <button type="button" class="btn blue-gradient p-0 mx-0">Read more<i class="fa fa-angle-right ml-2"></i></button>
-                        </div>
-
-                    </div>
-                    <!-- Card -->
-
-                </div>
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-
-            </div>
-            <!-- Grid row -->
-
-            <div class="text-center mt-5">
-                <a href="#!">Browse all blog posts<i class="fa fa-angle-right ml-2"></i></a>
-            </div>
-
-        </section>
-        <!--Section: Content-->
-
-
-    </div>
-
+    <!--.............eta logo with address..............-->
 
 
     <div class="container my-5 py-5 z-depth-1">
@@ -564,69 +581,7 @@
 
     </div>
 
-
-
-
-
-
-
-    <div class="container my-5">
-
-
-        <!--Section: Content-->
-        <section class="p-5 z-depth-1">
-
-            <h3 class="text-center font-weight-bold mb-5">Covid-19 Update</h3>
-
-            <div class="row d-flex justify-content-center">
-
-                <div class="col-md-6 col-lg-3 mb-4 text-center">
-                    <h4 class="h1 font-weight-normal mb-3">
-                        <i class="fas fa-file-alt indigo-text"></i>
-                        <span class="d-inline-block count-up" data-from="0" data-to="100" data-time="2000">100</span>
-                    </h4>
-                    <p class="font-weight-normal text-muted">Unique Page</p>
-                </div>
-
-                <div class="col-md-6 col-lg-3 mb-4 text-center">
-                    <h4 class="h1 font-weight-normal mb-3">
-                        <i class="fas fa-layer-group indigo-text"></i>
-                        <span class="d-inline-block count1" data-from="0" data-to="250" data-time="2000">250</span>
-                    </h4>
-                    <p class="font-weight-normal text-muted">Block Variety</p>
-                </div>
-
-                <div class="col-md-6 col-lg-3 mb-4 text-center">
-                    <h4 class="h1 font-weight-normal mb-3">
-                        <i class="fas fa-pencil-ruler indigo-text"></i>
-                        <span class="d-inline-block count2" data-from="0" data-to="330" data-time="2000">330</span>
-                    </h4>
-                    <p class="font-weight-normal text-muted">Reusable Component</p>
-                </div>
-
-                <div class="col-md-6 col-lg-3 mb-4 text-center">
-                    <h4 class="h1 font-weight-normal mb-3">
-                        <i class="fab fa-react indigo-text"></i>
-                        <span class="d-inline-block count3" data-from="0" data-to="430" data-time="2000">430</span>
-                    </h4>
-                    <p class="font-weight-normal text-muted">Crafted Element</p>
-                </div>
-
-            </div>
-
-        </section>
-        <!--Section: Content-->
-
-    </div>
-
-
-
-
-
-    <!-------------------------------------------AR EKHANEE ESHEE SESH HOBEEEE------------------------------------------->
-
-
-
+    <!--......................................................footer.................................................-->
     <!-- Footer -->
     <footer class="page-footer font-small unique-color-dark pt-4">
 
@@ -660,6 +615,13 @@
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+
+    <script src="extra_added_file/scrpits.js"></script>
+
+
+    <!--....................................bootsnip js added....................................................-->
+
+
 
 </body>
 

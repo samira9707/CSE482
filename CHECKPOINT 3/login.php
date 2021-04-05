@@ -1,3 +1,35 @@
+<?php
+session_start();
+include 'php_actions/dbconnect.php';
+
+if (isset($_POST['submit'])) {
+
+
+    $email = $_POST['email'];
+    $pass = $_POST['pass'];
+    $encrptpass = md5($pass);
+
+    $login = "SELECT user_id FROM user WHERE email = '$email' and password = '$encrptpass'";
+
+    $result = mysqli_query($db, $login);
+    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $id = $row['user_id'];
+
+    $count = mysqli_num_rows($result);
+
+    if ($count == 1) {
+       
+        $_SESSION['login_user'] = $id;
+        header("location: home.php");
+    } else {
+        echo '<script> alert("Your Login Name or Password is invalid") </script>';
+     
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -92,51 +124,36 @@
 
             <div class="col-6">
 
-                <!-- Default form register -->
-                <form class="text-center border border-light p-5" name="signup" onsubmit="signupform()" method="POST" action="php_actions/signup.php">
+                <!-- Default form login -->
+                <form class="text-center border border-light p-5" name="signin" method="POST" onsubmit="signinform()" action="login.php">
 
-                    <p class="h4 mb-4">Sign up</p>
+                    <p class="h4 mb-4">Sign in</p>
 
-                    <div class="form-row mb-4">
-                        <div class="col">
-                            <!-- First name -->
-                            <input type="text" class="form-control" name="fname" placeholder="First name">
-                        </div>
-                        <div class="col">
-                            <!-- Last name -->
-                            <input type="text" class="form-control" name="lname" placeholder="Last name">
-                        </div>
-                    </div>
-
-                    <!-- E-mail -->
-                    <input type="email" class="form-control mb-4" name="email" placeholder="E-mail">
+                    <!-- Email -->
+                    <input type="email" name="email" class="form-control mb-4" placeholder="E-mail">
 
                     <!-- Password -->
-                    <input type="password" name="pass" class="form-control" placeholder="Password">
-                    <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
-        At least 6 characters
-    </small>
-
-                    <!-- Phone number -->
-                    <input type="text" class="form-control" name="phone" placeholder="Phone number">
+                    <input type="password" name="pass" class="form-control mb-4" placeholder="Password">
 
 
 
+                    <!-- Sign in button -->
+                    <button class="btn btn-info btn-block my-4" name="submit" type="submit">Sign in</button>
 
-                    <!-- Sign up button -->
-                    <button class="btn btn-info my-4 btn-block " name="submit" type="submit ">Sign Up</button>
+                    <!-- Register -->
+                    <p>Don't have an account?
+                        <a href="signup.html">Register</a>
+                    </p>
 
 
-                    <!-- Terms of service -->
-                    <p>Already have an account?
-                        <a href="login.html ">Login Here</a>
+
 
                 </form>
-                <!-- Default form register -->
+                <!-- Default form login -->
 
             </div>
 
-            <div class="col-3 ">
+            <div class="col-3">
             </div>
 
         </div>
@@ -151,55 +168,40 @@
 
 
     <!-- Footer -->
-    <footer class="page-footer font-small unique-color-dark pt-4 ">
+    <footer class="page-footer font-small unique-color-dark pt-4">
 
-        <div class="container ">
-            <ul class="list-unstyled list-inline text-center py-2 ">
-                <li class="list-inline-item ">
-                    <h5 class="mb-1 ">Register for free</h5>
+        <div class="container">
+            <ul class="list-unstyled list-inline text-center py-2">
+                <li class="list-inline-item">
+                    <h5 class="mb-1">Register for free</h5>
                 </li>
-                <li class="list-inline-item ">
-                    <a href="#! " class="btn btn-outline-white btn-rounded ">Sign up!</a>
+                <li class="list-inline-item">
+                    <a href="#!" class="btn btn-outline-white btn-rounded">Sign up!</a>
                 </li>
             </ul>
         </div>
 
         <!-- Copyright -->
-        <div class="footer-copyright text-center py-3 ">© 2021 Copyright:
-            <a href="https://binaryBros.digital/ "> binaryBros.digital</a>
+        <div class="footer-copyright text-center py-3">© 2021 Copyright:
+            <a href="https://binaryBros.digital/"> binaryBros.digital</a>
         </div>
         <!-- Copyright -->
     </footer>
     <!-- Footer -->
-
-
-
-
     <script>
-        function signupform() {
+        function signinform() {
 
-            var fname = document.signup.fname.value;
-            var lname = document.signup.lname.value;
-            var mobile = document.signup.phone.value;
-            var email = document.signup.email.value;
-            var password = document.signup.password.value;
 
-            if (fname == null || fname == " ") {
-                alert("First Name can 't be blank");
-                return false;
-            } else if (lname == null || lname == "") {
-                alert("Last Name can't be blank ");
-                return false;
-            } else if (password.length < 6) {
-                alert("Password must be at least 6 Digit long. ");
-                return false;
-            } else if (mobile.length < 11) {
-                alert("Mobile Number must be at least 11 Digit long. ");
+            var email = document.signin.email.value;
+            var password = document.signin.password.value;
+
+            if (password.length < 6) {
+                alert("Password must be at least 6 Digit long.");
                 return false;
             } else if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email)) {
                 return (true)
             }
-            alert("You have entered an invalid email address! ")
+            alert("You have entered an invalid email address!")
             return (false)
 
         }
@@ -208,13 +210,17 @@
 
     <!-- End your project here-->
     <!-- jQuery -->
-    <script type="text/javascript " src="js/jquery.min.js "></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript " src="js/popper.min.js "></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript " src="js/bootstrap.min.js "></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript " src="js/mdb.min.js "></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+
+
+
+
 
 </body>
 

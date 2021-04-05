@@ -1,3 +1,22 @@
+<?php
+include 'php_actions/dbconnect.php';
+
+   session_start();
+   if(!isset($_SESSION['login_user'])){
+    header("location:login.php");
+    die();
+ }
+   
+   $user_check = $_SESSION['login_user'];
+   
+   $ses_sql = mysqli_query($db,"SELECT f_name FROM user WHERE user_id = '$user_check' ");
+   
+   $row = mysqli_fetch_array($ses_sql,MYSQLI_ASSOC);
+   
+   $login_session = $row['f_name'];
+   
+  
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,8 +72,8 @@
     </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="index.html">HOME </a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="home.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
 
                     <li class="nav-item dropdown multi-level-dropdown">
@@ -246,11 +265,11 @@
                                 <a class="dropdown-item" href="#"><b>More Informations</b></a>
                             </div>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">BLOG <span class="sr-only">(current)</span></a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="blog.php">BLOG</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="gallery.html">GALLERY</a>
+                            <a class="nav-link" href="gallery.php">GALLERY</a>
                         </li>
                 </ul>
                 <ul class="navbar-nav nav-flex-icons">
@@ -262,7 +281,11 @@
                         </form>
                     </li>
                     <li class="nav-item">
-                        <a class="btn blue-gradient btn-sm" href="login.html">Login / Register</a>
+                            <a class="nav-link" href="userprofile.php?id=<?php echo $user_check;?>">Hello <?php echo $login_session; ?></a>
+                        </li>
+                    <li class="nav-item">
+                   
+                        <a class="btn blue-gradient btn-sm" href="php_actions/logout.php">Logout</a>
                     </li>
 
                 </ul>

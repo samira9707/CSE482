@@ -3,7 +3,7 @@ include 'php_actions/dbconnect.php';
 
    session_start();
    if(!isset($_SESSION['login_user'])){
-    header("location:logout.php");
+    header("location:login.php");
     die();
  }
    
@@ -73,7 +73,7 @@ include 'php_actions/dbconnect.php';
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="home.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
 
                     <li class="nav-item dropdown multi-level-dropdown">
@@ -266,10 +266,10 @@ include 'php_actions/dbconnect.php';
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="blog.html">BLOG</a>
+                            <a class="nav-link" href="blog.php">BLOG</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="gallery.html">GALLERY</a>
+                            <a class="nav-link" href="gallery.php">GALLERY</a>
                         </li>
                 </ul>
                 <ul class="navbar-nav nav-flex-icons">

@@ -1,7 +1,5 @@
-<?php
-session_start();
-include 'dbconnect.php';
 
+<<<<<<< HEAD
 if (isset($_POST['submit'])) {
 
 
@@ -25,3 +23,5 @@ if (isset($_POST['submit'])) {
         echo  "Your Login Name or Password is invalid";
     }
 }
+=======
+>>>>>>> Development

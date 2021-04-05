@@ -22,6 +22,6 @@ if (isset($_POST['submit'])) {
         $_SESSION['login_user'] = $id;
         header("location: ../home.php");
     } else {
-        $error = "Your Login Name or Password is invalid";
+        echo  "Your Login Name or Password is invalid";
     }
 }

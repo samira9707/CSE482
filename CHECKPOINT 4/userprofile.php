@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <?php
 include 'php_actions/dbconnect.php';
+session_start();
 
 
 if (!isset($_SESSION['login_user'])) {
@@ -60,25 +58,21 @@ if(isset($_POST['postupdate'])){
 
 ?>
 
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>Travel Guide</title>
-    <!-- MDB icon -->
     <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-
-    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Material Design Bootstrap -->
     <link rel="stylesheet" href="css/mdb.min.css">
-    <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/extra.css">
+    <link rel="stylesheet" href="extra_added_file/style.css">
 
 
 
@@ -87,239 +81,244 @@ if(isset($_POST['postupdate'])){
 <body>
     <!-- Start your project here-->
 
-    <!--Main Navigation-->
     <header>
 
-        <nav class="navbar fixed-top navbar-expand-lg navbar-dark black scrolling-navbar">
-            <a class="navbar-brand" href="#"><strong>TRAVEL GUIDE</strong></a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="home.php">HOME <span class="sr-only">(current)</span></a>
-                    </li>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark black scrolling-navbar">
+    <a class="navbar-brand" href="#"><strong>TRAVEL GUIDE</strong></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="home.php">HOME <span class="sr-only">(current)</span></a>
+            </li>
 
-                    <li class="nav-item dropdown multi-level-dropdown">
-                        <a href="#" id="menu" data-toggle="dropdown" class="nav-link dropdown-toggle">PLACES</a>
-                        <ul class="dropdown-menu mt-2 rounded-0  blue-gradient lighten-4 border-0 z-depth-1">
-                            <li class="dropdown-item dropdown-submenu p-0">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100 "><b>Barishal</b> </a>
-                                <ul class="dropdown-menu ml-2 rounded-0 blue-gradient border-0 z-depth-1">
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Bhola</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Potuakhali</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Borguna</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Pirojpur</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Jhalokathi</b></a>
-                                    </li>
-
-                                </ul>
+            <li class="nav-item dropdown multi-level-dropdown">
+                <a href="#" id="menu" data-toggle="dropdown" class="nav-link dropdown-toggle">PLACES</a>
+                <ul class="dropdown-menu mt-2 rounded-0  blue-gradient lighten-4 border-0 z-depth-1">
+                    <li class="dropdown-item dropdown-submenu p-0">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100 "><b>Barishal</b> </a>
+                        <ul class="dropdown-menu ml-2 rounded-0 blue-gradient border-0 z-depth-1">
+                            <li class="dropdown-item p-0">
+                                <a href="#" class="text-black w-100"><b>Bhola</b></a>
                             </li>
-                            <li class="dropdown-item dropdown-submenu p-0">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100"><b>Chottogram</b> </a>
-                                <ul class="dropdown-menu mr-2 rounded-0 blue-gradient  border-0 z-depth-1 r-100 l-auto">
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Noakhali</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Cumilla</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Cox's Bazar</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Feni</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Bandarban</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Khagrachari</b></a>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Chadpur</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Lokkhipur</b></a>
-                                    </li>
-
-                                </ul>
+                            <li class="dropdown-item p-0">
+                                <a href="#" class="text-black w-100"><b>Potuakhali</b></a>
+                            </li>
+                            <li class="dropdown-item p-0">
+                                <a href="#" class="text-black w-100"><b>Borguna</b></a>
+                            </li>
+                            <li class="dropdown-item p-0">
+                                <a href="#" class="text-black w-100"><b>Pirojpur</b></a>
+                            </li>
+                            <li class="dropdown-item p-0">
+                                <a href="#" class="text-black w-100"><b>Jhalokathi</b></a>
                             </li>
 
-                            <li class="dropdown-item dropdown-submenu p-0">
-                                <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100"><b>Khulna</b> </a>
-                                <ul class="dropdown-menu mr-2 rounded-0 blue-gradient  border-0 z-depth-1 r-100 l-auto">
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Jessore</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Jhinaidhah</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Chuadanga</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Meherpur</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Pabna</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Kushtia</b></a>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Mongla</b></a>
-                                    </li>
-                                    <li class="dropdown-item p-0">
-                                        <a href="#" class="text-black w-100"><b>Narail</b></a>
-                                    </li>
-
-                            </li>
                         </ul>
                     </li>
                     <li class="dropdown-item dropdown-submenu p-0">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100"><b>Dhaka</b> </a>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100"><b>Chottogram</b> </a>
                         <ul class="dropdown-menu mr-2 rounded-0 blue-gradient  border-0 z-depth-1 r-100 l-auto">
                             <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Narshingdi</b></a>
+                                <a href="#" class="text-black w-100"><b>Noakhali</b></a>
                             </li>
                             <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Narayanganj</b></a>
+                                <a href="#" class="text-black w-100"><b>Cumilla</b></a>
                             </li>
                             <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Tangail</b></a>
+                                <a href="#" class="text-black w-100"><b>Cox's Bazar</b></a>
                             </li>
                             <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Shonargaon</b></a>
+                                <a href="#" class="text-black w-100"><b>Feni</b></a>
+                            </li>
+                            <li class="dropdown-item p-0">
+                                <a href="#" class="text-black w-100"><b>Bandarban</b></a>
+                            </li>
+                            <li class="dropdown-item p-0">
+                                <a href="#" class="text-black w-100"><b>Khagrachari</b></a>
+                            <li class="dropdown-item p-0">
+                                <a href="#" class="text-black w-100"><b>Chadpur</b></a>
+                            </li>
+                            <li class="dropdown-item p-0">
+                                <a href="#" class="text-black w-100"><b>Lokkhipur</b></a>
                             </li>
 
                         </ul>
                     </li>
 
                     <li class="dropdown-item dropdown-submenu p-0">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100"><b>Rangpur</b> </a>
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100"><b>Khulna</b> </a>
                         <ul class="dropdown-menu mr-2 rounded-0 blue-gradient  border-0 z-depth-1 r-100 l-auto">
                             <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Dinajpur</b></a>
+                                <a href="#" class="text-black w-100"><b>Jessore</b></a>
                             </li>
                             <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Jaipurhat</b></a>
+                                <a href="#" class="text-black w-100"><b>Jhinaidhah</b></a>
                             </li>
                             <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Gaibandha</b></a>
+                                <a href="#" class="text-black w-100"><b>Chuadanga</b></a>
                             </li>
                             <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Nilphamari</b></a>
+                                <a href="#" class="text-black w-100"><b>Meherpur</b></a>
                             </li>
                             <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Phulbari</b></a>
+                                <a href="#" class="text-black w-100"><b>Pabna</b></a>
                             </li>
                             <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Thakurgaon</b></a>
+                                <a href="#" class="text-black w-100"><b>Kushtia</b></a>
+                            <li class="dropdown-item p-0">
+                                <a href="#" class="text-black w-100"><b>Mongla</b></a>
                             </li>
-                        </ul>
+                            <li class="dropdown-item p-0">
+                                <a href="#" class="text-black w-100"><b>Narail</b></a>
+                            </li>
+
                     </li>
-
-                    <li class="dropdown-item dropdown-submenu p-0">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100"><b>Rajshahi</b> </a>
-                        <ul class="dropdown-menu mr-2 rounded-0 blue-gradient  border-0 z-depth-1 r-100 l-auto">
-                            <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Bogura</b></a>
-                            </li>
-                            <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Natore</b></a>
-                            </li>
-                            <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Sirajganj</b></a>
-                            </li>
-                            <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Chapainabanganj</b></a>
-                            </li>
-
-                        </ul>
+                </ul>
+            </li>
+            <li class="dropdown-item dropdown-submenu p-0">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100"><b>Dhaka</b> </a>
+                <ul class="dropdown-menu mr-2 rounded-0 blue-gradient  border-0 z-depth-1 r-100 l-auto">
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Narshingdi</b></a>
                     </li>
-                    <li class="dropdown-item dropdown-submenu p-0">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100"><b>Sylhet</b> </a>
-                        <ul class="dropdown-menu mr-2 rounded-0 blue-gradient  border-0 z-depth-1 r-100 l-auto">
-                            <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Sunamganj</b></a>
-                            </li>
-                            <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Habiganj</b></a>
-                            </li>
-                            <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Maulvibazar</b></a>
-                            </li>
-
-
-                        </ul>
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Narayanganj</b></a>
                     </li>
-                    <li class="dropdown-item dropdown-submenu p-0">
-                        <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100"><b>Mymanshing</b> </a>
-                        <ul class="dropdown-menu mr-2 rounded-0 blue-gradient  border-0 z-depth-1 r-100 l-auto">
-                            <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Jamalpur</b></a>
-                            </li>
-                            <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Sherpur</b></a>
-                            </li>
-                            <li class="dropdown-item p-0">
-                                <a href="#" class="text-black w-100"><b>Netrokona</b></a>
-                            </li>
-
-                        </ul>
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Tangail</b></a>
+                    </li>
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Shonargaon</b></a>
                     </li>
 
                 </ul>
-                </li>
+            </li>
 
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TIPS & TRICKS</a>
-                    <div class="dropdown-menu blue-gradient" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#"><b>TOUR TIPS</b></a>
-                        <a class="dropdown-item" href="#"><b>Useful Tricks</b></a>
-                        <a class="dropdown-item" href="#"><b>More Informations</b></a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="blog.php">BLOG</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="gallery.php">GALLERY</a>
-                </li>
+            <li class="dropdown-item dropdown-submenu p-0">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100"><b>Rangpur</b> </a>
+                <ul class="dropdown-menu mr-2 rounded-0 blue-gradient  border-0 z-depth-1 r-100 l-auto">
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Dinajpur</b></a>
+                    </li>
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Jaipurhat</b></a>
+                    </li>
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Gaibandha</b></a>
+                    </li>
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Nilphamari</b></a>
+                    </li>
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Phulbari</b></a>
+                    </li>
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Thakurgaon</b></a>
+                    </li>
                 </ul>
-                <ul class="navbar-nav nav-flex-icons">
-                    <li class="nav-item">
-                        <form class="form-inline">
-                            <div class="md-form my-0">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                            </div>
-                        </form>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="userprofile.php?id=<?php echo $user_check; ?>">Hello <?php echo $login_session; ?></a>
-                    </li>
-                    <li class="nav-item">
+            </li>
 
-                        <a class="btn blue-gradient btn-sm" href="php_actions/logout.php">Logout</a>
+            <li class="dropdown-item dropdown-submenu p-0">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100"><b>Rajshahi</b> </a>
+                <ul class="dropdown-menu mr-2 rounded-0 blue-gradient  border-0 z-depth-1 r-100 l-auto">
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Bogura</b></a>
+                    </li>
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Natore</b></a>
+                    </li>
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Sirajganj</b></a>
+                    </li>
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Chapainabanganj</b></a>
                     </li>
 
                 </ul>
+            </li>
+            <li class="dropdown-item dropdown-submenu p-0">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100"><b>Sylhet</b> </a>
+                <ul class="dropdown-menu mr-2 rounded-0 blue-gradient  border-0 z-depth-1 r-100 l-auto">
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Sunamganj</b></a>
+                    </li>
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Habiganj</b></a>
+                    </li>
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Maulvibazar</b></a>
+                    </li>
+
+
+                </ul>
+            </li>
+            <li class="dropdown-item dropdown-submenu p-0">
+                <a href="#" data-toggle="dropdown" class="dropdown-toggle text-black w-100"><b>Mymanshing</b> </a>
+                <ul class="dropdown-menu mr-2 rounded-0 blue-gradient  border-0 z-depth-1 r-100 l-auto">
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Jamalpur</b></a>
+                    </li>
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Sherpur</b></a>
+                    </li>
+                    <li class="dropdown-item p-0">
+                        <a href="#" class="text-black w-100"><b>Netrokona</b></a>
+                    </li>
+
+                </ul>
+            </li>
+
+        </ul>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">TIPS & TRICKS</a>
+            <div class="dropdown-menu blue-gradient" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#"><b>TOUR TIPS</b></a>
+                <a class="dropdown-item" href="#"><b>Useful Tricks</b></a>
+                <a class="dropdown-item" href="#"><b>More Informations</b></a>
             </div>
-        </nav>
+        </li>
 
-    </header>
-    <!--Main Navigation-->
 
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blogs</a>
+            <div class="dropdown-menu blue-gradient" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="blog.php"><b>All Blogs</b></a>
+                <a class="dropdown-item" href="" data-toggle="modal" data-target="#modalContactForm"><b>Add New Blog</b></a>
+
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="gallery.php">GALLERY</a>
+        </li>
+        </ul>
+        <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+                <div class="container">
+
+
+                    <input class="form-control" onkeyup="showResult(this.value)" type="text" placeholder="Type something to search list items">
+                    <ul class="stack-top" id="search"></ul>
+
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="userprofile.php?id=<?php echo $user_check; ?>">Hello <?php echo $login_session; ?></a>
+            </li>
+            <li class="nav-item">
+
+                <a class="btn blue-gradient btn-sm" href="php_actions/logout.php">Logout</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+</header>
+<!--Main Navigation-->
 
 
 
@@ -469,12 +468,6 @@ if (file_exists($filename)==1) {
                                                     <label for="">Facebook Profile Link</label>
                                                     <input type="text" name="fb" value="<?php echo $fb; ?>" class="form-control validate">
                                                 </div>
-                   
-                                             
-
-                                                <div id="success"></div>
-
-
                                             </div>
                                             <div class="modal-footer d-flex justify-content-center">
                                                 <button class="btn btn-unique" type="submit" name="profileupdate">Update <i class="fas fa-paper-plane-o ml-1"></i></button>
@@ -697,7 +690,7 @@ if (file_exists($filename)==1) {
     <script type="text/javascript " src="js/bootstrap.min.js "></script>
     <!-- MDB core JavaScript -->
     <script type="text/javascript " src="js/mdb.min.js "></script>
-
+    <script type="text/javascript" src="extra_added_file/scrpits.js"></script>
     <script type="text/javascript" src="js/alert.js"></script>
 
 

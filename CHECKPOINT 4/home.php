@@ -1,6 +1,6 @@
 <?php
 include 'php_actions/dbconnect.php';
-
+session_start();
 if (!isset($_SESSION['login_user'])) {
     header("location:login.php");
     die();
@@ -23,47 +23,18 @@ $login_session = $row['f_name'];
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Tour GuideS</title>
-    <!-- MDB icon -->
+    <title>Tour Guide-Home</title>
     <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <!-- Google Fonts Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-
-    <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Material Design Bootstrap -->
     <link rel="stylesheet" href="css/mdb.min.css">
-    <!-- Your custom styles (optional) -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/extra.css">
-
- 
-
-
-
+    <link rel="stylesheet" href="extra_added_file/style.css">
 </head>
-<style>
-    .map-container {
-        height: 200px;
-        position: relative;
-    }
-
-    .map-container iframe {
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-    }
-</style>
 
 <body>
-    <!-- Start your project here-->
-
-
-    <!--Main Navigation-->
     <header>
 
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark black scrolling-navbar">
@@ -281,11 +252,12 @@ $login_session = $row['f_name'];
                 </ul>
                 <ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item">
-                        <form class="form-inline">
-                            <div class="md-form my-0">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                            </div>
-                        </form>
+                        <div class="container">
+
+
+                            <input class="form-control" onkeyup="showResult(this.value)" type="text" placeholder="Type something to search list items">
+                            <ul class="stack-top" id="search"></ul>
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="userprofile.php?id=<?php echo $user_check; ?>">Hello <?php echo $login_session; ?></a>
@@ -319,42 +291,39 @@ $login_session = $row['f_name'];
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form  method="post" action="php_actions/add_blog.php" enctype="multipart/form-data">
-                <div class="modal-body mx-3">
-                    <div class="md-form mb-5">
-                    <input type="hidden" name="uid"  value="<?php echo $user_check; ?>">
-                        <input type="text" name="title" class="form-control validate">
-                        
+                <form method="post" action="php_actions/add_blog.php" enctype="multipart/form-data">
+                    <div class="modal-body mx-3">
+                        <div class="md-form mb-5">
+                            <input type="hidden" name="uid" value="<?php echo $user_check; ?>">
+                            <label for="">Title</label>
+                            <input type="text" name="title" class="form-control validate">
+
+                        </div>
+
+
+                        <div class="md-form">
+                            <label for="">Description</label>
+                            <textarea type="text" name="desc" class="md-textarea form-control" rows="4"></textarea>
+
+                        </div>
+
+                        <div class="md-form">
+
+                            <input type="file" name="image" class="form-control">
+
+                        </div>
+
+                        <div id="success"></div>
+
+
                     </div>
-                    
-
-                    <div class="md-form">
-
-                        <textarea type="text" name="desc" class="md-textarea form-control" rows="4"></textarea>
-                        
+                    <div class="modal-footer d-flex justify-content-center">
+                        <button class="btn btn-unique" type="submit" name="blogsubmit">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
                     </div>
-
-                    <div class="md-form">
-
-                        <input type="file" name="image" class="form-control">
-                
-                    </div>
-
-                    <div id="success"></div>
-                    
-
-                </div>
-                <div class="modal-footer d-flex justify-content-center">
-                    <button class="btn btn-unique" type="submit"  name="blogsubmit">Send <i class="fas fa-paper-plane-o ml-1"></i></button>
-                </div>
                 </form>
             </div>
         </div>
     </div>
-
-
-
-
 
 
 
@@ -368,43 +337,33 @@ $login_session = $row['f_name'];
             <ol class="carousel-indicators">
                 <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
                 <li data-target="#carousel-example-2" data-slide-to="1"></li>
-                <li data-target="#carousel-example-2" data-slide-to="2"></li>
+                
             </ol>
             <!--/.Indicators-->
             <!--Slides-->
             <div class="carousel-inner" role="listbox">
                 <div class="carousel-item active">
                     <div class="view">
-                        <img class="d-block w-100" src="img/5.jpg" alt="First slide">
+                        <img class="d-block w-100" src="img/cover/1.jpg" alt="First slide">
                         <div class="mask rgba-black-light"></div>
                     </div>
                     <div class="carousel-caption">
-                        <h3 class="h3-responsive">Light mask</h3>
+                        <h3 class="h3-responsive">Sajek</h3>
                         <p>First text</p>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <!--Mask color-->
                     <div class="view">
-                        <img class="d-block w-100" src="img/A.jpg" alt="Second slide">
+                        <img class="d-block w-100" src="img/cover/2.jpg" alt="Second slide">
                         <div class="mask rgba-black-strong"></div>
                     </div>
                     <div class="carousel-caption">
-                        <h3 class="h3-responsive">Strong mask</h3>
+                        <h3 class="h3-responsive">Sylhet</h3>
                         <p>Secondary text</p>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <!--Mask color-->
-                    <div class="view">
-                        <img class="d-block w-100" src="img/ab.jpg" alt="Third slide">
-                        <div class="mask rgba-black-slight"></div>
-                    </div>
-                    <div class="carousel-caption">
-                        <h3 class="h3-responsive">Slight mask</h3>
-                        <p>Third text</p>
-                    </div>
-                </div>
+
             </div>
             <!--/.Slides-->
             <!--Controls-->
@@ -453,8 +412,6 @@ $login_session = $row['f_name'];
 
                             <p class="mb-1"><a href="" class="font-weight-bold black-text">Guthia Mosque</a></p>
 
-
-
                             <div class="amber-text fa-xs mb-1">
                                 <i class="fas fa-star"></i>
                                 <i class="fas fa-star"></i>
@@ -469,17 +426,10 @@ $login_session = $row['f_name'];
                         </div>
 
                     </div>
-                    <!-- Card -->
-
-
                 </div>
-
             </div>
-            <!--Grid row-->
-
-
         </section>
-        <!--Section: Content-->
+
 
 
     </div>
@@ -488,68 +438,36 @@ $login_session = $row['f_name'];
 
 
     <div class="container mt-5">
-
-
-        <!--Section: Content-->
         <section class="">
-
-            <!-- Section heading -->
             <h3 class="text-center font-weight-bold mb-5">Featured Blog</h3>
-
-            <!-- Grid row -->
             <div class="row">
 
-                <!-- Grid column -->
-
-
                 <?php
-                          
-
-                          $sql = "SELECT * FROM blog  WHERE status='1' ORDER BY blog_id 
+                $sql = "SELECT * FROM blog  WHERE status='1' ORDER BY blog_id 
                           DESC 
                           LIMIT 0, 3;";
-                          $result = mysqli_query($db, $sql);
-                          
-                          if (mysqli_num_rows($result) > 0) {
-                            // output data of each row
-                            while($row = mysqli_fetch_assoc($result)) {
-                                ?>
+                $result = mysqli_query($db, $sql);
 
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                ?>
 
-
-
-                <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
-
-                    <!-- Card -->
-                    <div class="card hoverable">
-
-                        <!-- Card image -->
-                        <img class="card-img-top"  src="blogimage/<?php echo $row['image'] ;?>" width="60px" alt="Card image cap">
-
-
-                        <!-- Card content -->
-                        <div class="card-body">
-
-                            <!-- Title -->
-                            <a href="#!" class="black-text"><?php echo $row['title'] ;?></a> <br>
-                            <!-- Text -->
-
-                            <a href="blogdetails.php?blogid=<?php echo $row['blog_id'] ;?> " class="btn blue-gradient p-2 mx-0">Read more<i class="fa fa-angle-right ml-2"></i></a>
+                        <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
+                            <div class="card hoverable">
+                                <img class="card-img-top" src="blogimage/<?php echo $row['image']; ?>" width="60px" alt="Card image cap">
+                                <div class="card-body">
+                                    <a href=" " class="black-text"><?php echo $row['title']; ?></a> <br>
+                                    <a href="blogdetails.php?blogid=<?php echo $row['blog_id']; ?> " class="btn blue-gradient p-2 mx-0">Read more<i class="fa fa-angle-right ml-2"></i></a>
+                                </div>
+                            </div>
                         </div>
 
-                    </div>
-                    <!-- Card -->
-
-                </div>
-
                 <?php
-                            }
-                            
-                                    } 
-                                    else {
-                                        echo "No Blogs";
-                                    }
-                                      ?>
+                    }
+                } else {
+                    echo "No Blogs";
+                }
+                ?>
 
 
             </div>
@@ -671,8 +589,6 @@ $login_session = $row['f_name'];
 
     <div class="container my-5">
 
-
-        <!--Section: Content-->
         <section class="p-5 z-depth-1">
 
             <h3 class="text-center font-weight-bold mb-5">Covid-19 Update</h3>
@@ -681,40 +597,40 @@ $login_session = $row['f_name'];
 
                 <div class="col-md-6 col-lg-3 mb-4 text-center">
                     <h4 class="h1 font-weight-normal mb-3">
-                        <i class="fas fa-file-alt indigo-text"></i>
-                        <span class="d-inline-block count-up" data-from="0" data-to="100" data-time="2000">100</span>
+                        <i class="fas fa-viruses indigo-text"></i>
+                        <span class="d-inline-block count-up" data-from="0" data-to="100" id="LastCase" data-time="2000"> </span>
                     </h4>
-                    <p class="font-weight-normal text-muted">Unique Page</p>
+                    <p class="font-weight-normal text-muted">Todays Cases</p>
                 </div>
 
                 <div class="col-md-6 col-lg-3 mb-4 text-center">
                     <h4 class="h1 font-weight-normal mb-3">
-                        <i class="fas fa-layer-group indigo-text"></i>
-                        <span class="d-inline-block count1" data-from="0" data-to="250" data-time="2000">250</span>
+                        <i class="fas fa-hospital-user indigo-text"></i>
+
+                        <span class="d-inline-block count1" data-from="0" data-to="250" id="TotalCase" data-time="2000"></span>
                     </h4>
-                    <p class="font-weight-normal text-muted">Block Variety</p>
+                    <p class="font-weight-normal text-muted">Total Cases</p>
                 </div>
 
                 <div class="col-md-6 col-lg-3 mb-4 text-center">
                     <h4 class="h1 font-weight-normal mb-3">
-                        <i class="fas fa-pencil-ruler indigo-text"></i>
-                        <span class="d-inline-block count2" data-from="0" data-to="330" data-time="2000">330</span>
+                        <i class="fas fa-bed indigo-text"></i>
+                        <span class="d-inline-block count2" data-from="0" data-to="330" id="LastDeath" data-time="2000">330</span>
                     </h4>
-                    <p class="font-weight-normal text-muted">Reusable Component</p>
+                    <p class="font-weight-normal text-muted">Todays Death</p>
                 </div>
 
                 <div class="col-md-6 col-lg-3 mb-4 text-center">
                     <h4 class="h1 font-weight-normal mb-3">
-                        <i class="fab fa-react indigo-text"></i>
-                        <span class="d-inline-block count3" data-from="0" data-to="430" data-time="2000">430</span>
+                        <i class="fas fa-bed indigo-text"></i>
+                        <span class="d-inline-block count3" data-from="0" data-to="430" id="TotalDeath" data-time="2000">430</span>
                     </h4>
-                    <p class="font-weight-normal text-muted">Crafted Element</p>
+                    <p class="font-weight-normal text-muted">Total Death</p>
                 </div>
 
             </div>
 
         </section>
-        <!--Section: Content-->
 
     </div>
 
@@ -750,69 +666,74 @@ $login_session = $row['f_name'];
 
 
 
-    <!-- End your project here-->
-    <!-- jQuery -->
+
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
     <script type="text/javascript" src="js/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src="extra_added_file/scrpits.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="covid.js"></script>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <script>
-  $(document).ready(function () {
-    $('#blogsubmit').click(function (e) {
-      e.preventDefault();
-      var title = $('#title').val();
-      var desc = $('#desc').val();
-      var img = $('#image').val();
-      var userid = $('#userid').val();
-      $.ajax
-        ({
-          type: "POST",
-          url: "php_actions/add_blog.php",
-          data: { "title": title, "desc": desc,"image":img, "userid": userid},
-          success: function (data) {
-            $('#success').html("<div class='alert alert-success' role='alert'>Post Uploaded!</div>");
-           
-    
-          }
+    <script>
+        $(document).ready(function() {
+            $('#blogsubmit').click(function(e) {
+                e.preventDefault();
+                var title = $('#title').val();
+                var desc = $('#desc').val();
+                var img = $('#image').val();
+                var userid = $('#userid').val();
+                $.ajax({
+                    type: "POST",
+                    url: "php_actions/add_blog.php",
+                    data: {
+                        "title": title,
+                        "desc": desc,
+                        "image": img,
+                        "userid": userid
+                    },
+                    success: function(data) {
+                        $('#success').html("<div class='alert alert-success' role='alert'>Post Uploaded!</div>");
+
+
+                    }
+                });
+            });
         });
-    });
-  });
-</script>
+    </script>
 
 
 
-<script type="text/javascript" src="js/alert.js"></script>
+    <script type="text/javascript" src="js/alert.js"></script>
 
 
-<?php
-$msg=$_SESSION['msg'];
-if ($msg){ ?>
+    <?php
+    if(isset($_SESSION['msg'])){
 
-<script>
+   
+    $msg = $_SESSION['msg'];
+    if ($msg) { ?>
 
-swal({
-  title: "<?php echo $msg; ?>",
-  
-  icon: "success",
-  timer:2000,
-});
-</script>
+        <script>
+            swal({
+                title: "<?php echo $msg; ?>",
+
+                icon: "success",
+                timer: 2000,
+            });
+        </script>
 
 
- <?php 
- unset($_SESSION['msg']);
+    <?php
+        unset($_SESSION['msg']);
+    } else {
+    }
+
 }
-else{
-    
-}
-?>
+    ?>
 
 </body>
 

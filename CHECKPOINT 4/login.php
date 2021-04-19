@@ -1,13 +1,12 @@
 <?php
-
 include 'php_actions/dbconnect.php';
 
+session_start();
 if (isset($_SESSION['login_user'])) {
     header("location:home.php");
-   
+    die();
 }
 if (isset($_POST['submit'])) {
-
 
     $email = $_POST['email'];
     $pass = $_POST['pass'];
@@ -30,6 +29,8 @@ if (isset($_POST['submit'])) {
      
     }
 }
+
+
 
 ?>
 
@@ -94,21 +95,14 @@ if (isset($_POST['submit'])) {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.php">HOME <span class="sr-only">(current)</span></a>
                     </li>
 
 
                 </ul>
                 <ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item">
-                        <form class="form-inline">
-                            <div class="md-form my-0">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                            </div>
-                        </form>
-                    </li>
-                    <li class="nav-item">
-                        <a class="btn blue-gradient btn-sm" href="login.html">Login / Register</a>
+                        <a class="btn blue-gradient btn-sm" href="signup.html">Register</a>
                     </li>
 
                 </ul>

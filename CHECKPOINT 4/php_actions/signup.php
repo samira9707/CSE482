@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
 
     if($db->query($signup)===TRUE){
         echo '<script> alert("User Account created Successfully") </script>';
-        echo ("<script>location.href='../login.html'</script>");
+        echo ("<script>location.href='../login.php'</script>");
     }
     else{
         echo "Sorry";

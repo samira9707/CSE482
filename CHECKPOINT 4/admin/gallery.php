@@ -1,5 +1,33 @@
+
+
 <?php
-include '../php_actions/dbconnect.php';
+ include '../php_actions/dbconnect.php';
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header("location:index.php");
+    die();
+}
+
+$admin = $_SESSION['admin'];
+
+$sql = mysqli_query($db, "SELECT name FROM admin WHERE admin_id = '$admin' ");
+
+$row = mysqli_fetch_array($sql, MYSQLI_ASSOC);
+
+$name = $row['name'];
+
+
+
+
+
+$msg="";
+if (!isset($_SESSION['success'])) {
+    
+}
+else{
+$msg=$_SESSION['success'];
+}
+
 
 if(isset($_POST['delete'])){
     $id = $_POST['id'];
@@ -53,18 +81,21 @@ if(isset($_POST['delete'])){
 <body>
     <!-- Start your project here-->
 
-    <!--Navbar -->
-    <nav class="mb-1 navbar navbar-expand-lg navbar-dark black">
-        <a class="navbar-brand" href="#">Navbar</a>
+  <!--Navbar -->
+  <nav class="mb-1 navbar navbar-expand-lg navbar-dark black">
+        <a class="navbar-brand" href="#">ADMIN </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Dashboard
+                <li class="nav-item ">
+                    <a class="nav-link" href="admin.php">Dashboard
             <span class="sr-only">(current)</span>
           </a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="gallery.php">Manage Gallery </a>
                 </li>
 
 
@@ -74,12 +105,11 @@ if(isset($_POST['delete'])){
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-user"></i> <?php echo $name;?>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="logout.php">LOGOUT</a>
+                        
                     </div>
                 </li>
             </ul>

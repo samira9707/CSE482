@@ -1,5 +1,23 @@
 <?php
  include '../php_actions/dbconnect.php';
+session_start();
+if (!isset($_SESSION['admin'])) {
+    header("location:index.php");
+    die();
+}
+
+$admin = $_SESSION['admin'];
+
+$sql = mysqli_query($db, "SELECT name FROM admin WHERE admin_id = '$admin' ");
+
+$row = mysqli_fetch_array($sql, MYSQLI_ASSOC);
+
+$name = $row['name'];
+
+
+
+
+
 $msg="";
 if (!isset($_SESSION['success'])) {
     
@@ -43,7 +61,7 @@ $msg=$_SESSION['success'];
 
     <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark black">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">ADMIN</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -54,6 +72,9 @@ $msg=$_SESSION['success'];
             <span class="sr-only">(current)</span>
           </a>
                 </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="gallery.php">Manage Gallery </a>
+                </li>
 
 
 
@@ -62,12 +83,11 @@ $msg=$_SESSION['success'];
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fas fa-user"></i>
+                        <i class="fas fa-user"></i> <?php echo $name;?>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="logout.php">LOGOUT</a>
+                        
                     </div>
                 </li>
             </ul>
@@ -94,10 +114,19 @@ $msg=$_SESSION['success'];
                     <div class="media white z-depth-1 rounded">
                         <i class="far fa-money-bill-alt fa-lg blue z-depth-1 p-4 rounded-left text-white mr-3"></i>
                         <div class="media-body p-1">
-                            <p class="text-uppercase text-muted mb-1"><small>Total Members</small></p>
-                            <h5 class="font-weight-bold mb-0">23 </h5>
+                            <p class="text-uppercase text-muted mb-1"><small>Total Blog Post</small></p>
+                            <h5 class="font-weight-bold mb-0">
+                            <?php
+                            $countblog=mysqli_query($db,"SELECT * from blog");
+
+                            $row = mysqli_num_rows($countblog);
+
+                            echo $row;
+
+                            ?>
+                             </h5>
                         </div>
-                        <button type="button" class="btn btn-primary">Primary</button>
+                        
                     </div>
 
 
@@ -111,11 +140,19 @@ $msg=$_SESSION['success'];
                     <div class="media white z-depth-1 rounded">
                         <i class="fas fa-chart-pie fa-lg teal z-depth-1 p-4 rounded-left text-white mr-3"></i>
                         <div class="media-body p-1">
-                            <p class="text-uppercase text-muted mb-1"><small>Places</small></p>
-                            <h5 class="font-weight-bold mb-0">13</h5>
+                            <p class="text-uppercase text-muted mb-1"><small>Gallery Image</small></p>
+                            <h5 class="font-weight-bold mb-0">
+                            <?php
+                            $countimage=mysqli_query($db,"SELECT * FROM images");
+
+                            $ci = mysqli_num_rows($countimage);
+
+                            echo $ci;
+
+                            ?>
+                            </h5>
                         </div>
-                        <button type="button" class="btn btn-success">Primary</button>
-                    </div>
+                        </div>
 
                 </div>
                 <!--Grid column-->
@@ -126,10 +163,19 @@ $msg=$_SESSION['success'];
                     <div class="media white z-depth-1 rounded">
                         <i class="fas fa-download fa-lg pink z-depth-1 p-4 rounded-left text-white mr-3"></i>
                         <div class="media-body p-1">
-                            <p class="text-uppercase text-muted mb-1"><small>Photos</small></p>
-                            <h5 class="font-weight-bold mb-0">45</h5>
+                            <p class="text-uppercase text-muted mb-1"><small>Total Guideline</small></p>
+                            <h5 class="font-weight-bold mb-0">
+                                
+                            <?php
+                            $counttips=mysqli_query($db,"SELECT * FROM guideline");
+
+                            $ct = mysqli_num_rows($counttips);
+
+                            echo $ct;
+
+                            ?>
+                            </h5>
                         </div>
-                        <button type="button" class="btn btn-danger">Primary</button>
                     </div>
 
                 </div>

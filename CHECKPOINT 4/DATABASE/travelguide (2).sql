@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Apr 18, 2021 at 06:53 PM
+-- Generation Time: Apr 19, 2021 at 06:46 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -34,7 +34,14 @@ CREATE TABLE IF NOT EXISTS `admin` (
   `username` varchar(45) DEFAULT NULL,
   `password` varchar(45) DEFAULT NULL,
   PRIMARY KEY (`admin_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `name`, `username`, `password`) VALUES
+(1, 'Travel Giude Admin', 'admin', 'admin123');
 
 -- --------------------------------------------------------
 
@@ -52,7 +59,7 @@ CREATE TABLE IF NOT EXISTS `blog` (
   `status` int(10) DEFAULT NULL,
   `up_time` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`blog_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=57 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `blog`
@@ -63,7 +70,8 @@ INSERT INTO `blog` (`blog_id`, `title`, `description`, `image`, `user_id`, `stat
 (49, 'Khulna', 'beautiful khulnaa', 'khulna.jpg', 7, 1, '04:26 PM (18-04-2021)'),
 (50, 'Coxs Bazar', 'beautiful sea in bangladesh.', 'coxs.jpg', 7, 1, '05:17 PM (18-04-2021)'),
 (51, 'Dhaka City', ' gisfgvkvrtfg', 'dhaka.jpg', 7, 1, '05:19 PM (18-04-2021)'),
-(52, 'New Place', '', 'rajshahi.jpg', 11, 1, '07:48 PM (18-04-2021)');
+(52, 'New Place', ' Nice Place', 'rajshahi.jpg', 11, 1, '07:48 PM (18-04-2021)'),
+(56, 'test 2', 'hwllo', 'dhaka.jpg', 21, 0, '12:06 PM (19-04-2021)');
 
 -- --------------------------------------------------------
 
@@ -165,7 +173,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` varchar(45) DEFAULT NULL,
   `status` int(11) DEFAULT NULL,
   PRIMARY KEY (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
@@ -175,7 +183,8 @@ INSERT INTO `user` (`user_id`, `f_name`, `l_name`, `email`, `phone`, `address`, 
 (7, 'Abir ', 'Farajee', 'abirfarajee80@gmail.com', '01622124013', 'Uttara, Dhaka-1230', 'download.jpg', 'https://www.facebook.com/abir.farajee/', 'd54d1702ad0f8326224b817c796763c9', 1),
 (11, 'Wegrab Technologies', NULL, 'wegrab.tech@gmail.com', NULL, NULL, 'https://lh3.googleusercontent.com/a-/AOh14Gil4bkoAaKtoTXntx1XHZGw-FGfPsyi006vHpJT=s96-c', NULL, NULL, 1),
 (19, 'GhureFiri Bangladesh', NULL, 'ghurefiribangladesh@gmail.com', NULL, NULL, 'https://lh3.googleusercontent.com/a-/AOh14GiU2SHwH8hl_NGfgh6_oRT_phftVdg7oody9Uwm=s96-c', NULL, NULL, 1),
-(20, 'Foodie Views', NULL, 'foodieviewsorg@gmail.com', NULL, NULL, 'https://lh3.googleusercontent.com/a-/AOh14GjRBTP_adqPx9ZZfnKboNoVaqdHjWlT1XyG9szh=s96-c', NULL, NULL, 1);
+(20, 'Foodie Views', NULL, 'foodieviewsorg@gmail.com', NULL, NULL, 'https://lh3.googleusercontent.com/a-/AOh14GjRBTP_adqPx9ZZfnKboNoVaqdHjWlT1XyG9szh=s96-c', NULL, NULL, 1),
+(21, 'Mahbubul Kabir Farajee', '', 'mk.farajee@ieee.org', '01622124012', '', 'download.jpg', '', NULL, 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

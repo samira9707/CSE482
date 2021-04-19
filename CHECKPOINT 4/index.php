@@ -1,3 +1,14 @@
+<?php
+include 'php_actions/dbconnect.php';
+
+session_start();
+if (isset($_SESSION['login_user'])) {
+    header("location:home.php");
+    die();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,13 +72,6 @@
 
                 </ul>
                 <ul class="navbar-nav nav-flex-icons">
-                    <li class="nav-item">
-                        <form class="form-inline">
-                            <div class="md-form my-0">
-                                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-                            </div>
-                        </form>
-                    </li>
                     <li class="nav-item">
                         <a class="btn blue-gradient btn-sm" href="login.php">Login / Register</a>
                     </li>
@@ -214,51 +218,42 @@
 
 
     <div class="container mt-5">
-
-
-        <!--Section: Content-->
         <section class="">
-
-            <!-- Section heading -->
             <h3 class="text-center font-weight-bold mb-5">Featured Blog</h3>
-
-            <!-- Grid row -->
             <div class="row">
 
-                <!-- Grid column -->
+                <?php
+               
+                          $sql = "SELECT * FROM blog  WHERE status='1' ORDER BY blog_id 
+                          DESC 
+                          LIMIT 0, 3;";
+                          $result = mysqli_query($db, $sql);
+                          
+                          if (mysqli_num_rows($result) > 0) {
+                            while($row = mysqli_fetch_assoc($result)) {
+                                ?>
 
-                <!-- Grid column -->
-
-                <!-- Grid column -->
-                <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
-
-                    <!-- Card -->
-                    <div class="card hoverable">
-
-                        <!-- Card image -->
-                        <img class="card-img-top" src="img/A.jpg" alt="Card image cap">
-
-
-                        <!-- Card content -->
-                        <div class="card-body">
-
-                            <!-- Title -->
-                            <a href="#!" class="black-text">Top 5 content marketing strategies</a>
-                            <!-- Text -->
-                            <p class="card-title text-muted font-small mt-3 mb-2">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title.</p>
-
-                            <button type="button" class="btn blue-gradient p-0 mx-0">Read more<i class="fa fa-angle-right ml-2"></i></button>
+                    <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
+                        <div class="card hoverable">
+                            <img class="card-img-top" src="blogimage/<?php echo $row['image'] ;?>" width="60px" alt="Card image cap">
+                            <div class="card-body">
+                                <a href=" " class="black-text">
+                                    <?php echo $row['title'] ;?>
+                                </a> <br>
+                                <a href="blogdetails.php?blogid=<?php echo $row['blog_id'] ;?> " class="btn blue-gradient p-2 mx-0">Read more<i class="fa fa-angle-right ml-2"></i></a>
+                            </div>
                         </div>
-
                     </div>
-                    <!-- Card -->
 
-                </div>
-                <!-- Grid column -->
+                    <?php
+                            }
+                            
+                                    } 
+                                    else {
+                                        echo "No Blogs";
+                                    }
+                                      ?>
 
-                <!-- Grid column -->
-
-                <!-- Grid column -->
 
             </div>
             <!-- Grid row -->
@@ -378,9 +373,6 @@
 
 
     <div class="container my-5">
-
-
-        <!--Section: Content-->
         <section class="p-5 z-depth-1">
 
             <h3 class="text-center font-weight-bold mb-5">Covid-19 Update</h3>
@@ -423,7 +415,7 @@
             </div>
 
         </section>
-        <!--Section: Content-->
+
 
     </div>
 

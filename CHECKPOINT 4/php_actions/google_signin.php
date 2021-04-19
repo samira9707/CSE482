@@ -1,7 +1,7 @@
 <?php
 
 include 'dbconnect.php';
-
+session_start();
 
         $email = $_POST['email'];
         $fname = $_POST['fname'];
@@ -28,6 +28,7 @@ include 'dbconnect.php';
             if ($db->query($signup) === TRUE) {
                 $id = mysqli_insert_id($db);
                 $_SESSION['login_user'] = $id;
+                header("location:../home.php");
                 
 
 

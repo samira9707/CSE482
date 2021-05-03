@@ -290,11 +290,15 @@ session_start();
             <li class="nav-item">
                 <a class="nav-link" href="userprofile.php?id=<?php echo $user_check; ?>">Hello <?php echo $login_session; ?></a>
             </li>
+
             <li class="nav-item">
 
-                <a class="btn blue-gradient btn-sm" href="php_actions/logout.php">Logout</a>
-            </li>
+                        <a class="btn blue-gradient btn-sm" href="userprofile.php?id=<?php echo $user_check; ?>">Your Profile</a>
+                    </li>
+            <li class="nav-item">
 
+            <a class="btn purple-gradient btn-sm" href="php_actions/logout.php">Logout</a>
+                    </li>
         </ul>
     </div>
 </nav>
@@ -460,7 +464,7 @@ if (file_exists($filename)) {
 
       <div class="card-footer white py-3">
         <div class="form-group mb-0">
-            <form action="php_actions/add_comment.php" method="post">
+            <form action="php_actions/tips_comment.php" method="post">
           <textarea class="form-control rounded-0"  rows="2" name="comment" placeholder="Write a comment"></textarea>
           <input type="hidden" name="tipsid" value="<?php echo $tipsid ; ?>">
           <input type="hidden" name="userid" value="<?php echo $user_check ; ?>">
@@ -485,34 +489,126 @@ if (file_exists($filename)) {
 
 
 
-
-    <!-------------------------------------------AR EKHANEE ESHEE SESH HOBEEEE------------------------------------------->
-
+<div class="container my-5 py-5 z-depth-1">
 
 
-    <!-- Footer -->
-    <footer class="page-footer font-small unique-color-dark pt-4">
+<!--Section: Content-->
+<section class="px-md-5 mx-md-5 text-center dark-grey-text">
 
-        <div class="container">
-            <ul class="list-unstyled list-inline text-center py-2">
-                <li class="list-inline-item">
-                    <h5 class="mb-1">Register for free</h5>
-                </li>
-                <li class="list-inline-item">
-                    <a href="#!" class="btn btn-outline-white btn-rounded">Sign up!</a>
-                </li>
-            </ul>
+
+    <!--Google map-->
+    <div id="map-container-google-1" class="z-depth-1 map-container mb-5">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d466451.7041893772!2d90.39015015455186!3d24.025636125484137!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c64c103a8093%3A0xd660a4f50365294a!2sNorth%20South%20University!5e0!3m2!1sen!2sbd!4v1620025619646!5m2!1sen!2sbd" frameborder="0" style="border:0" loading="lazy" allowfullscreen></iframe>
+    </div>
+
+
+    <!--Google Maps-->
+
+    <!--Grid row-->
+    <div class="row d-flex justify-content-center mb-5">
+
+        <!--Grid column-->
+        <div class="col-md-6 text-center">
+
+            <h3 class="font-weight-bold">Contact Us</h3>
+    <form action="contact.php" method="post">
+             <!-- Material outline input -->
+             <div class="md-form md-outline mt-3">
+                <input type="text" id="form-text" name="Name" class="form-control">
+                <label for="form-email">Name</label>
+            </div>
+
+            <!-- Material outline input -->
+            <div class="md-form md-outline mt-3">
+                <input type="email" id="form-email" name="Email" class="form-control">
+                <label for="form-email">E-mail</label>
+            </div>
+
+            <!-- Material outline input -->
+            <div class="md-form md-outline">
+                <input type="text" id="form-subject" name="Subject" class="form-control">
+                <label for="form-subject">Subject</label>
+            </div>
+
+            <!--Material textarea-->
+            <div class="md-form md-outline mb-3">
+                <textarea id="form-message" class="md-textarea form-control" name="Message" rows="5"></textarea>
+                <label for="form-message">How we can help?</label>
+            </div>
+
+            <button type="submit" name="mailSubmit" class="btn btn-info btn-sm ml-0">Submit<i class="far fa-paper-plane ml-2"></i></button>
+            </form>
         </div>
+        <!--Grid column-->
 
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2021 Copyright:
-            <a href="https://binaryBros.digital/"> binaryBros.digital</a>
+    </div>
+    <!--Grid row-->
+
+    <!--Grid row-->
+    <div class="row text-center">
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+
+            <i class="fas fa-map-marker-alt fa-2x blue-text"></i>
+
+            <p class="font-weight-bold my-3">Address</p>
+
+            <p class="text-muted">North South University</p>
+
         </div>
-        <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+
+            <i class="fas fa-phone fa-2x blue-text"></i>
+
+            <p class="font-weight-bold my-3">Phone number</p>
+
+            <p class="text-muted">+88 0132211244</p>
+
+        </div>
+        <!--Grid column-->
+
+        <!--Grid column-->
+        <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+
+            <i class="fas fa-envelope fa-2x blue-text"></i>
+
+            <p class="font-weight-bold my-3">E-mail</p>
+
+            <p class="text-muted">travelguide@gmail.com</p>
+
+        </div>
+        <!--Grid column-->
+
+    </div>
+    <!--Grid row-->
 
 
+</section>
+<!--Section: Content-->
+
+
+</div>
+
+
+
+
+<!-------------------------------------------AR EKHANEE ESHEE SESH HOBEEEE------------------------------------------->
+
+
+
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark pt-4">
+<!-- Copyright -->
+<div class="footer-copyright text-center py-3">© 2021 Copyright:
+    <a href="https://binaryBros.digital/"> binaryBros.digital</a>
+</div>
+<!-- Copyright -->
+</footer>
+<!-- Footer -->
 
     <!-- End your project here-->
     <!-- jQuery -->

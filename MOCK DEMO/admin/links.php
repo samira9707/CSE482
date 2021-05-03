@@ -31,11 +31,11 @@ if(isset($_POST['delete'])){
     $id = $_POST['id'];
     
    
-    $check= mysqli_query($db, "DELETE FROM images WHERE id='$id' "); 
+    $check= mysqli_query($db, "DELETE FROM links WHERE link_id='$id' "); 
     
     if($check==TRUE){
-        $msg =  "IMAGE DELETED.";
-        header('location:gallery.php');
+        $msg =  "LINK DELETED.";
+        header('location:links.php');
     }
     else{
         echo "Sorry";
@@ -257,7 +257,7 @@ if(isset($_POST['delete'])){
                                 <!--Footer-->
                                 <div class="modal-footer flex-center">
                                 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                                <input type="hidden" name="id" value="<?php echo $row['id'];?>">
+                                <input type="hidden" name="id" value="<?php echo $row['link_id'];?>">
                                 <input type="submit" name="delete" class="btn  btn-outline-danger" >
                                 </form>
                                 <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">No</a>

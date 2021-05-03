@@ -308,10 +308,15 @@ if(isset($_POST['postupdate'])){
             <li class="nav-item">
                 <a class="nav-link" href="userprofile.php?id=<?php echo $user_check; ?>">Hello <?php echo $login_session; ?></a>
             </li>
+
             <li class="nav-item">
 
-                <a class="btn blue-gradient btn-sm" href="php_actions/logout.php">Logout</a>
-            </li>
+                        <a class="btn blue-gradient btn-sm" href="userprofile.php?id=<?php echo $user_check; ?>">Your Profile</a>
+                    </li>
+            <li class="nav-item">
+
+            <a class="btn purple-gradient btn-sm" href="php_actions/logout.php">Logout</a>
+                    </li>
 
         </ul>
     </div>
@@ -632,16 +637,6 @@ if (file_exists($filename)==1) {
     <!-- Footer -->
     <footer class="page-footer font-small unique-color-dark pt-4 ">
 
-        <div class="container ">
-            <ul class="list-unstyled list-inline text-center py-2 ">
-                <li class="list-inline-item ">
-                    <h5 class="mb-1 ">Register for free</h5>
-                </li>
-                <li class="list-inline-item ">
-                    <a href="#! " class="btn btn-outline-white btn-rounded ">Sign up!</a>
-                </li>
-            </ul>
-        </div>
 
         <!-- Copyright -->
         <div class="footer-copyright text-center py-3 ">© 2021 Copyright:

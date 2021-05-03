@@ -12,6 +12,8 @@ if (isset($_POST['submit'])) {
     $pass = $_POST['pass'];
     $encrptpass = md5($pass);
 
+    
+
     $login = "SELECT user_id FROM user WHERE email = '$email' and password = '$encrptpass'";
 
     $result = mysqli_query($db, $login);
@@ -21,7 +23,11 @@ if (isset($_POST['submit'])) {
     $count = mysqli_num_rows($result);
 
     if ($count == 1) {
-       
+
+
+        if(isset($_POST['rem'])){
+            setcookie('login_user',$id, time()+86400 * 30);
+        }
         $_SESSION['login_user'] = $id;
         header("location: home.php");
     } else {
@@ -135,6 +141,11 @@ if (isset($_POST['submit'])) {
 
                     <!-- Password -->
                     <input type="password" name="pass" class="form-control mb-4" placeholder="Password">
+
+                    <div class="custom-control custom-checkbox">
+    <input type="checkbox" name="rem" value="1" class="custom-control-input" id="defaultUnchecked">
+    <label class="custom-control-label" for="defaultUnchecked">Remember Me</label>
+</div>
 
 
 

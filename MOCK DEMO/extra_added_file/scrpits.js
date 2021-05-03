@@ -87,6 +87,9 @@ $(document)
         e.preventDefault();
     });
 
+
+// ----SEARCH -----  
+
 function showResult(str) {
     if (str.length == 0) {
         document.getElementById("search").innerHTML = "";

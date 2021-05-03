@@ -1,0 +1,12 @@
+[19-Apr-2021 08:35:28 UTC] PHP Fatal error:  Uncaught Error: Call to a member function revokeToken() on null in /home/binarybr/travelguide.binarybros.digital/login.php:235
+Stack trace:
+#0 {main}
+  thrown in /home/binarybr/travelguide.binarybros.digital/login.php on line 235
+[19-Apr-2021 08:35:37 UTC] PHP Fatal error:  Uncaught Error: Call to a member function revokeToken() on null in /home/binarybr/travelguide.binarybros.digital/login.php:235
+Stack trace:
+#0 {main}
+  thrown in /home/binarybr/travelguide.binarybros.digital/login.php on line 235
+[19-Apr-2021 08:35:48 UTC] PHP Fatal error:  Uncaught Error: Call to a member function revokeToken() on null in /home/binarybr/travelguide.binarybros.digital/login.php:235
+Stack trace:
+#0 {main}
+  thrown in /home/binarybr/travelguide.binarybros.digital/login.php on line 235

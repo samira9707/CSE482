@@ -1,0 +1,23 @@
+.map-container {
+    height: 200px;
+    position: relative;
+}
+
+.map-container iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.profile-head {
+    transform: translateY(5rem)
+}
+
+.stack-top {
+    background-color: white;
+    position: absolute;
+    border-radius: 5px;
+    margin-top: 100px;
+}
